@@ -2,7 +2,9 @@ import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await fetch(`/api/socials`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
+  );
   const data = await response.json();
 
   if (!data) {
