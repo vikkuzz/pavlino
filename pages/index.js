@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
       path: 'https://twitter.com/YauhenKavalchuk',
     },
   ]
-  const data = await socials.json();
+  const data = socials;
 
   if (!data) {
     return {
@@ -49,7 +49,7 @@ export const getStaticProps = async () => {
 const Home = ({ socials }) => {
   return (
     <div className={styles.wrapper}>
-      {/* <Socials socials={socials} /> */}
+      <Socials socials={socials} />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Image src="/novologo.svg" width={150} height={60} alt="logo" />
+        <Image priority src="/novologo.svg" width={150} height={60} alt="logo" />
       </div>
       <div className={styles.links}>
         {navigation.map(({ id, title, path }) => (
