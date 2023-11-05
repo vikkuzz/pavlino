@@ -2,7 +2,6 @@ import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
-  console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
   // const response = await fetch(
   //   `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
   // );
@@ -47,6 +46,7 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ socials }) => {
+  console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
   return (
     <div className={styles.wrapper}>
       <Socials socials={socials} />
