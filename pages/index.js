@@ -1,29 +1,41 @@
+import { useEffect } from "react";
 import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
-export const getStaticProps = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
-  );
+// export const getStaticProps = async () => {
+//   const response = await fetch(
+//     `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
+//   );
 
   
-  const data = await response.json();
+//   const data = await response.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+//   if (!data) {
+//     return {
+//       notFound: true,
+//     };
+//   }
 
-  return {
-    props: { socials: data },
-  };
-};
+//   return {
+//     props: { socials: data },
+//   };
+// };
 
 const Home = ({ socials }) => {
+  useEffect(()=>{
+    async function getSocials(){
+      const response = await fetch(
+      `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
+    );
+    console.log(response.json())    
+    }
+    getSocials()
+   
+
+  },[])
   return (
     <div className={styles.wrapper}>
-      <Socials socials={socials} />
+      {/* <Socials socials={socials} /> */}
     </div>
   );
 };
