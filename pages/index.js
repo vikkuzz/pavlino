@@ -23,19 +23,7 @@ export const getStaticProps = async () => {
 };
 
 const Home = ({ socials }) => {
-  useEffect(()=>{
-    async function getSocials(){
-      const response = await fetch(
-      `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`,
-     { mode: "no-cors",}
-    )
-    console.log(await response.json())
-     
-    }
-    getSocials()
-   
-
-  },[])
+  
   return (
     <div className={styles.wrapper}>
       <Socials socials={socials} />
