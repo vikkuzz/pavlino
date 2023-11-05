@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
   const response = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`,
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`,
     { mode: "no-cors",}
   );
 
