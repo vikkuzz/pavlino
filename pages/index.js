@@ -5,6 +5,8 @@ export const getStaticProps = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/socials`
   );
+
+  
   const data = await response.json();
 
   if (!data) {
