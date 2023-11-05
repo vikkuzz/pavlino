@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
