@@ -7,7 +7,7 @@ export const getStaticProps = async () => {
     `${process.env.MY_URL}/api/socials`,
     { mode: "no-cors",}
   );
-  console.log(response)
+  console.log(JSON.parse(response))
 
   
   const data = await response.json();
