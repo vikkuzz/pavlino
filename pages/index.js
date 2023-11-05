@@ -8,8 +8,11 @@ export const getStaticProps = async () => {
     { mode: "no-cors",}
   );
 
-  
+  if(response.headers['content-type'] === 'text/html'){
+    return null
+  }
   const data = await response.json();
+ 
 
   if (!data) {
     return {
