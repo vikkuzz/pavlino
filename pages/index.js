@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
   const response = await fetch(
-    `${process.env.VERCEL_URL}/api/socials`,
+    `https://${process.env.VERCEL_URL}/api/socials`,
     { mode: "no-cors",}
   );
 
