@@ -2,10 +2,12 @@ import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
+  console.log(`${process.env.MY_URL}/api/socials`)
   const response = await fetch(
     `${process.env.MY_URL}/api/socials`,
     { mode: "no-cors",}
   );
+  console.log(await response.json())
 
   
   const data = await response.json();
