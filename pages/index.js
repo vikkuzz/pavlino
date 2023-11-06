@@ -5,7 +5,7 @@ export const getStaticProps = async () => {
   console.log(`${process.env.MY_URL}/api/socials`)
   const response = await fetch(
     `${process.env.MY_URL}/api/socials`,
-    { mode: "no-cors",}
+    { mode: "no-cors", method: 'GET',}
   );
   const data = await response.json();
  

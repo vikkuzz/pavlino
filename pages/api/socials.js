@@ -1,4 +1,4 @@
-import { socials } from '../../datas/socials';
+import { socials } from './data/socials';
 
 export default function handler(req, res) {
   if (req.method === 'GET') {
