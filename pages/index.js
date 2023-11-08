@@ -2,22 +2,32 @@ import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
 
 export const getStaticProps = async () => {
-  console.log(`${process.env.MY_URL}/api/socials`)
+  console.log(`https://${process.env.MY_URL}/api/socials`)
   const response = await fetch(
-    `${process.env.MY_URL}/api/socials`,
-    { mode: "no-cors", method: 'GET',}
+    `https://${process.env.MY_URL}/api/socials`
   );
-  const data = await response.json();
+  console.log(response)
+  //const data = await response.json();
  
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
   return {
-    props: { socials: data },
+    props: { socials: [
+      {
+        id: 1,
+        icon: 'youtube',
+        path: 'https://youtube.com',
+      },
+      {
+        id: 2,
+        icon: 'instagram',
+        path: 'https://instagram.com',
+      }] },
   };
 };
 
