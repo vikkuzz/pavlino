@@ -9,11 +9,11 @@ export const getStaticProps = async () => {
   const data = await response.json();
  
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
   return {
     props: { socials: data },
