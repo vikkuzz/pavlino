@@ -50,10 +50,12 @@ const AuthProvider = ({ children }) => {
       console.log(error);
     }
   };
+
   const logout = async () => {
     try {
       await signOut(auth);
-    } catch (error) {
+    } 
+    catch (error) {
       console.log(error);
     }
   };
