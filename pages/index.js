@@ -7,7 +7,7 @@ export const getStaticProps = async () => {
     `https://${process.env.MY_URL}/api/socials`
   );
   //const data = await response.json();
- console.log(response)
+ console.log(await response.json())
 
   // if (!data) {
   //   return {
