@@ -6,28 +6,17 @@ export const getStaticProps = async () => {
   const response = await fetch(
     `https://${process.env.MY_URL}/api/socials`
   );
-  console.log(response)
-  //const data = await response.json();
+  const data = await response.json();
  
 
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
-    props: { socials: [
-      {
-        id: 1,
-        icon: 'youtube',
-        path: 'https://youtube.com',
-      },
-      {
-        id: 2,
-        icon: 'instagram',
-        path: 'https://instagram.com',
-      }] },
+    props: { socials: data },
   };
 };
 
