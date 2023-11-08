@@ -5,9 +5,9 @@ export const getStaticProps = async () => {
   console.log(`https://${process.env.MY_URL}/api/socials`)
   const response = await fetch(
     `https://${process.env.MY_URL}/api/socials`
-  );
+  ).then(res=>console.log(res.json()))
   //const data = await response.json();
- console.log(await response.json())
+ //console.log(await response.json())
 
   // if (!data) {
   //   return {
