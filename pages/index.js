@@ -1,13 +1,16 @@
 import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
+import { getAbsoluteUrl } from "../utils";
 
 export const getStaticProps = async () => {
-  console.log(`https://${process.env.MY_URL}/api/socials`)
+  const abs_url = getAbsoluteUrl()
   const response = await fetch(
-    `https://${process.env.MY_URL}/api/socials`
-  ).then(async(res)=>console.log(await res.json()))
+    `${abs_url}/api/socials`
+  );
+
+  console.log(getAbsoluteUrl())
   //const data = await response.json();
- //console.log(await response.json())
+ 
 
   // if (!data) {
   //   return {
@@ -16,17 +19,7 @@ export const getStaticProps = async () => {
   // }
 
   return {
-    props: { socials: [
-      {
-        id: 1,
-        icon: 'youtube',
-        path: 'https://youtube.com',
-      },
-      {
-        id: 2,
-        icon: 'instagram',
-        path: 'https://instagram.com',
-      }] },
+    props: { socials: 'data' },
   };
 };
 
@@ -34,7 +27,7 @@ const Home = ({ socials }) => {
   
   return (
     <div className={styles.wrapper}>
-      <Socials socials={socials} />
+      {/* <Socials socials={socials} /> */}
     </div>
   );
 };
