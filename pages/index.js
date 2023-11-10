@@ -9,7 +9,7 @@ export const getStaticProps = async () => {
   );
 
   console.log(getAbsoluteUrl())
-  //const data = await response.json();
+  const data = await response.json();
  
 
   // if (!data) {
